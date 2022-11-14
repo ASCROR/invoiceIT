@@ -1,8 +1,9 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import MainHeader from './MainHeader';
 import NavLinks from './NavLinks';
+import NavSettings from "./NavSettings";
 import SideDrawer from './SideDrawer';
 import Backdrop from '../UIElements/Backdrop';
 import './MainNavigation.css';
@@ -25,25 +26,30 @@ const MainNavigation = props => {
         <nav className="main-navigation__drawer-nav">
           <NavLinks />
         </nav>
+          <div className="main-navigation__drawer-nav">
+              <NavSettings />
+          </div>
       </SideDrawer>
 
       <MainHeader>
-        <button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
-          <span />
-          <span />
-          <span />
-        </button>
-        <h1 className="main-navigation__title">
-          YourPlaces
-        </h1>
-        <nav className="main-navigation__header-nav">
-          <NavLinks />
-        </nav>
-        <div>
-          <ul>
-            hi
-          </ul>
-        </div>
+
+       <div className="main-navigation">
+         <button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
+           <span />
+           <span />
+           <span />
+         </button>
+         <h1 className="main-navigation__title">
+           <Link to="/">LOGO</Link>
+         </h1>
+         <nav className="main-navigation__header-nav">
+           <NavLinks />
+         </nav>
+         <div className="main-navigation__header-nav">
+          <NavSettings />
+         </div>
+
+       </div>
       </MainHeader>
     </React.Fragment>
   );
