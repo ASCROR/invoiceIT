@@ -3,12 +3,20 @@ import {
   BrowserRouter,
   Routes,
   Route,
-    Navigate,
+
   Link,
 } from "react-router-dom";
-import MainNavigation from './shared/components/Navigation/MainNavigation';
 
 import './App.css';
+
+
+import MainNavigation from './shared/components/Navigation/MainNavigation';
+import Clients from "./clients/pages/Clients";
+import Companies from "./companies/pages/Companies";
+import Invoices from "./invoices/pages/Invoices";
+import Profile from "./profile/pages/Profile";
+
+
 
 function App() {
   return (
@@ -18,18 +26,21 @@ function App() {
                 <main>
 
                     <Routes>
-                        <Route path="/izrada-fakture" >
+                        <Route path="/" element={<Invoices />} />
 
-                        </Route>
-                        <Route path="/moji-klijenti" >
 
-                        </Route>
-                        <Route path="/moje-tvtke">
 
-                        </Route>
-                        <Route path="/profil">
+                        <Route path="/moji-klijenti" element={<Clients />} />
 
-                        </Route>
+
+
+                        <Route path="/moje-tvrtke" element={<Companies />} />
+
+
+
+                        <Route path="/profil" element={<Profile />} />
+
+
 
                     </Routes>
 
